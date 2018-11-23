@@ -1,8 +1,31 @@
 <html>
 	<head>
+		<meta charset="UTF-8">
 		<title>Random Dog</title>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+		<script>
+			function carregar(){
+				
+				// chamar a API do random dog
+				var sUrl = "https://random.dog/woof.json";
+				$.get(sUrl, function(oResponse){
+					
+					$("#imagem").attr("src", oResponse.url);
+				});
+				
+			}
+		</script>
+		
 	</head>
-		<body> 
+	<body>
+		<main>
+			<button onclick="carregar()" >Carregar Imagem</button>
+			<br />
+			<img id="imagem" src=""  />
 			
-		</body>
+			
+		</main>
+	</body>
 </html>
